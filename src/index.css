@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-brand: "Pacifico", cursive;
+}
+
+:root {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-reveal {
+  animation: cardReveal 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes floorDrift {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 360px 360px;
+  }
+}
+
+.floor-drift {
+  animation: floorDrift 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-shuffling] .shuffle-strand {
+    --pull-y: 2.5px;
+    --kick-y: -1.5px;
+    --strand-delay: 0ms;
+    animation: shuffleKick 305ms cubic-bezier(.22, .8, .28, 1) var(--strand-delay);
+  }
+
+  [data-shuffling] .shuffle-strand-down {
+    --pull-y: -2.5px;
+    --kick-y: 1.5px;
+    --strand-delay: 45ms;
+  }
+
+  [data-shuffling] .shuffle-shaft {
+    stroke-dasharray: 32 32;
+    animation: shuffleTail 305ms ease-out var(--strand-delay);
+  }
+}
+
+@keyframes shuffleKick {
+  0%, 100% { transform: translate(0, 0); stroke: currentColor; }
+  24% { transform: translate(-2.5px, var(--pull-y)); }
+  52% { transform: translate(1.5px, var(--kick-y)); stroke: var(--color-amber-200); }
+  76% { transform: translate(-.4px, calc(var(--pull-y) * .16)); }
+}
+
+@keyframes shuffleTail {
+  0%, 24%, 100% { stroke-dashoffset: 0; }
+  52% { stroke-dashoffset: -3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-reveal,
+  .floor-drift {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-spinning] .slot-arm {
+    transform-origin: 14.25px 9.5px;
+    animation: slotArm 210ms ease-in-out;
+  }
+
+  [data-spinning] .slot-knob {
+    animation: slotKnob 210ms ease-in-out;
+  }
+
+  [data-spinning] .slot-reel {
+    animation: slotReel 180ms cubic-bezier(.3, 0, .2, 1) both;
+  }
+}
+
+@keyframes slotArm {
+  0%, 100% { transform: scaleY(1); }
+  40% { transform: scaleY(-.5); }
+  78% { transform: scaleY(1.12); }
+}
+
+@keyframes slotKnob {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(6.75px); }
+  78% { transform: translateY(-.54px); }
+}
+
+@keyframes slotReel {
+  from { transform: translateY(0); }
+  to { transform: translateY(10px); }
+}
