@@ -85,12 +85,12 @@ export default function App() {
     const url = new URL(window.location.href);
     if (selected) {
       url.searchParams.set("pub", selected.ref);
-      document.title = `${selected.name}${selected.town ? ` (${selected.town})` : ""} — SpoonsCarpets.com`;
+      document.title = `${selected.name}${selected.town ? ` (${selected.town})` : ""} - SpoonsCarpets.com`;
     } else {
       url.searchParams.delete("pub");
       setFloorMode(false);
       setDevOpen(false);
-      document.title = "SpoonsCarpets.com — Every Wetherspoons carpet";
+      document.title = "SpoonsCarpets.com - Every Wetherspoons carpet";
     }
     window.history.replaceState(null, "", url.toString());
   }, [selected]);
@@ -700,7 +700,7 @@ export default function App() {
                             if (navigator.share) {
                               try {
                                 await navigator.share({
-                                  title: `${selected.name} — SpoonsCarpets.com`,
+                                  title: `${selected.name} - SpoonsCarpets.com`,
                                   url: window.location.href,
                                 });
                                 return;
