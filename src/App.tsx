@@ -90,7 +90,7 @@ export default function App() {
       url.searchParams.delete("pub");
       setFloorMode(false);
       setDevOpen(false);
-      document.title = "SpoonsCarpets.com — Every UK Wetherspoons Carpet, Vectorized";
+      document.title = "SpoonsCarpets.com — Every UK Wetherspoons Carpet";
     }
     window.history.replaceState(null, "", url.toString());
   }, [selected]);
