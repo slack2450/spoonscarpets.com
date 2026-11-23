@@ -6,11 +6,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="SpoonsCarpets.com" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="SpoonsCarpets.com" />
     <meta name="theme-color" content="#0a0a0a" />
 
+    <link rel="canonical" href="https://spoonscarpets.com/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+    <link rel="manifest" href="/manifest.json" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,11 +22,55 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Pacifico&amp;display=swap"
     />
 
-    <title>SpoonsCarpets.com</title>
+    <title>SpoonsCarpets.com — Every UK Wetherspoons Carpet, Vectorized</title>
     <meta
       name="description"
-      content="Every J D Wetherspoon pub carpet in the UK, seamlessly vectorized."
+      content="Explore all 768 seamlessly vectorized Axminster pub carpets (plus the 8 confirmed carpet-free pubs) across every J D Wetherspoon in the UK. Search by pub, town, colour, or nearest venue."
     />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SpoonsCarpets.com" />
+    <meta property="og:url" content="https://spoonscarpets.com/" />
+    <meta property="og:title" content="SpoonsCarpets.com — Every UK Wetherspoons Carpet, Vectorized" />
+    <meta
+      property="og:description"
+      content="768 seamlessly vectorized Axminster pub carpets + 8 carpet-free hard floors across all 776 UK Wetherspoons. Search by pub, colour, or nearest Spoons, and export phone wallpapers."
+    />
+    <meta property="og:image" content="https://spoonscarpets.com/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Mosaic of 12 seamlessly vectorized UK Wetherspoons pub carpets with the SpoonsCarpets.com title"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SpoonsCarpets.com — Every UK Wetherspoons Carpet, Vectorized" />
+    <meta
+      name="twitter:description"
+      content="All 768 UK Wetherspoons carpets seamlessly vectorized, plus the 8 hard-floor rebels. Search by pub, town, colour, or download phone wallpapers."
+    />
+    <meta name="twitter:image" content="https://spoonscarpets.com/og-image.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "SpoonsCarpets.com",
+        "url": "https://spoonscarpets.com/",
+        "description": "An open archive of 768 seamlessly vectorized Axminster carpet SVG repeat tiles and 8 photo-matched hard-floor tiles covering all 776 UK J D Wetherspoon pubs.",
+        "image": "https://spoonscarpets.com/og-image.png",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "SpoonsCarpets.com",
+          "url": "https://spoonscarpets.com/"
+        }
+      }
+    </script>
   </head>
   <body class="bg-neutral-950 text-neutral-100 antialiased">
     <div id="root"></div>

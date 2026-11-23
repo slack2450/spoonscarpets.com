@@ -85,10 +85,12 @@ export default function App() {
     const url = new URL(window.location.href);
     if (selected) {
       url.searchParams.set("pub", selected.ref);
+      document.title = `${selected.name}${selected.town ? ` (${selected.town})` : ""} — SpoonsCarpets.com`;
     } else {
       url.searchParams.delete("pub");
       setFloorMode(false);
       setDevOpen(false);
+      document.title = "SpoonsCarpets.com — Every UK Wetherspoons Carpet, Vectorized";
     }
     window.history.replaceState(null, "", url.toString());
   }, [selected]);

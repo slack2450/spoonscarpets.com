@@ -1,0 +1,26 @@
+{
+  "name": "SpoonsCarpets.com",
+  "short_name": "SpoonsCarpets",
+  "description": "Explore all 768 seamlessly vectorized UK J D Wetherspoon pub carpets and 8 confirmed carpet-free pubs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/favicon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
