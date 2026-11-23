@@ -288,7 +288,7 @@ export default function App() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search pub, town, county, postcode..."
-                className="w-full rounded-lg border border-neutral-800 bg-neutral-900 px-3 py-1.5 text-sm text-neutral-100 placeholder:text-neutral-500 transition-colors focus:border-amber-500/60 focus:outline-none sm:flex-1"
+                className="w-full rounded-lg border border-neutral-800 bg-neutral-900 px-3 py-1.5 text-base text-neutral-100 placeholder:text-neutral-500 transition-colors focus:border-amber-500/60 focus:outline-none sm:flex-1 sm:text-sm"
               />
 
               <div className="relative grid grid-cols-3 rounded-lg border border-neutral-800 bg-neutral-900 p-0.5 text-xs sm:w-80 sm:shrink-0">
