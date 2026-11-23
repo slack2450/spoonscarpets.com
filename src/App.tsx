@@ -90,7 +90,7 @@ export default function App() {
       url.searchParams.delete("pub");
       setFloorMode(false);
       setDevOpen(false);
-      document.title = "SpoonsCarpets.com — Every UK Wetherspoons Carpet";
+      document.title = "SpoonsCarpets.com — Every Wetherspoons carpet";
     }
     window.history.replaceState(null, "", url.toString());
   }, [selected]);

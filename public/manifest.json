@@ -1,7 +1,7 @@
 {
   "name": "SpoonsCarpets.com",
   "short_name": "SpoonsCarpets",
-  "description": "Every UK Wetherspoons carpet, all in one place.",
+  "description": "Every Wetherspoons carpet",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
