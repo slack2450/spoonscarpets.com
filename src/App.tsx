@@ -224,6 +224,7 @@ export default function App() {
 
   const shown = filtered.slice(0, visibleCount);
   const selectedSvgPath = selected?.pattern?.path ?? selected?.floor?.path ?? null;
+  const selectedSvgVersion = selected?.pattern?.sha256;
 
   return (
     <MotionConfig reducedMotion="user">
@@ -408,12 +409,12 @@ export default function App() {
                   <div className="relative h-36 w-full overflow-hidden bg-neutral-900 sm:h-48">
                     {pub.pattern ? (
                       <img
-                        src={patternUrl(pub.pattern.thumb || pub.pattern.path)}
+                        src={patternUrl(pub.pattern.thumb || pub.pattern.path, pub.pattern.sha256)}
                         onError={(e) => {
                           const img = e.currentTarget;
                           if (pub.pattern && !img.dataset.fallback) {
                             img.dataset.fallback = "1";
-                            img.src = patternUrl(pub.pattern.path);
+                            img.src = patternUrl(pub.pattern.path, pub.pattern.sha256);
                           }
                         }}
                         alt={`${pub.name} carpet pattern`}
@@ -514,7 +515,7 @@ export default function App() {
               transition={{ duration: 0.22 }}
               className={`fixed inset-0 z-[60] ${driftOn ? "floor-drift" : ""}`}
               style={{
-                backgroundImage: `url(${patternUrl(selectedSvgPath)})`,
+                backgroundImage: `url(${patternUrl(selectedSvgPath, selectedSvgVersion)})`,
                 backgroundRepeat: "repeat",
                 backgroundSize: `${tileZoom}px auto`,
               }}
@@ -577,7 +578,7 @@ export default function App() {
                 {selectedSvgPath ? (
                   <CarpetUnfurl
                     key={selected.ref}
-                    imageUrl={patternUrl(selectedSvgPath)}
+                    imageUrl={patternUrl(selectedSvgPath, selectedSvgVersion)}
                     tileZoom={tileZoom}
                     isHardFloor={Boolean(selected.noCarpet)}
                     closing={closingModal}
